@@ -1,13 +1,18 @@
-let keysLine = document.querySelector('.keys-line')
+let keys = document.querySelectorAll('.key');
 let display = document.querySelector('.display');
-let clearButton = document.querySelector('.clear');
+let clear = document.querySelector('.clear');
 let space = document.querySelector('.space');
-for (let key of keysLine) {
+display.textContent = '';
+
+for (let key of keys) {
     key.onclick = function() {
         display.textContent += key.textContent;
     }
 }
-space.onclick = function() {
 
-    console.log('click');
+clear.onclick = function() {
+    display.textContent = '';
+}
+space.onclick = function() {
+    display.textContent += ' ';
 }
